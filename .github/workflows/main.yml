@@ -44,7 +44,7 @@ jobs:
          ECR_REPOSITORY: app_repo
          IMAGE_TAG: v0.1
         run: |
-          cd assignment1_clo835/  
+          cd assignment2_clo835/  
           ls -ltra
           # Docker build
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
@@ -61,7 +61,7 @@ jobs:
          ECR_REPOSITORY: db_repo
          IMAGE_TAG: v1.0
         run: |
-          cd assignment1_clo835/  
+          cd assignment2_clo835/  
           ls -ltra
           # Docker build
           docker build -f Dockerfile_mysql -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .

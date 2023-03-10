@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  labels :
+    app: mysql
+  name: mysqldb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: mysqldb
+        image: 561283682508.dkr.ecr.us-east-1.amazonaws.com/db_repo:v1.0
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value : P@ssw0rd
+        ports: 
+        - containerPort: 8080
+          protocol: TCP
+      

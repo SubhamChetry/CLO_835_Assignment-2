@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  labels : 
+    app: student
+  name: student
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: student
+  template:
+    metadata:
+      labels:
+        app: student
+    spec:
+      containers:
+      - name: studentapp
+        image: 561283682508.dkr.ecr.us-east-1.amazonaws.com/app_repo:v0.1
+        ports: 
+        - containerPort: 8080
+          protocol: TCP
+        env:
+        - name: DBHOST
+          value : 10.244.0.11
+        - name: DBUSER
+          value : root
+        - name: DBPWD
+          value : P@ssw0rd
+        - name: DBPORT
+          value : "3306"

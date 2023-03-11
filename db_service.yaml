@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: mysqlservice
   labels:
-    app: mysql
+    app: db
   namespace: mysqldb
 spec:
   # if your cluster supports it, uncomment the following to automatically create
@@ -13,5 +13,5 @@ spec:
     targetPort: 3306
     # Optional field
   selector:
-    app: mysql
+    app: db
     

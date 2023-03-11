@@ -2,10 +2,10 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   labels : 
-    app: student
+    app: employee
   name: student
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: student
